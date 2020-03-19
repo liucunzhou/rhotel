@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>丽致官网</title>
+        <link href="/assets/css/common.css?{:rand(10000,1000000)}" rel="stylesheet">
+        <link href="/assets/css/index.css?{:rand(10000,1000000)}" rel="stylesheet">
+        <!-- jQuery -->
+        <script src=https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js></script>
+        <script src="/assets/js/common.js?{:rand(10000,100000)}"></script>
+        <style>
+            .daterangepicker {
+                display: none;
+            }
+            .btn-default:hover,.btn-default:active,.btn-default:focus{
+                background-color: inherit;
+            }
+        </style>
+    </head>
+
+    <body id="page-top">
+        {include file='common/nav' /}
+
+        <div class="bgf4">
+            <div class="mblock hotel-block">
+                <div class="block-title"">即刻体验</div>
+                <div class="hotel-address-list">
+                    {foreach name="groups" item="group"}
+                    <dl class="hotel-address-item">
+                        <dt class="hotel-name">{$key}</dt>
+                        {foreach name="group" item="hotel"}
+                        <dd class="hotel-address"><a href="{:url('store/room', ['id'=>$hotel['id']])}">{$hotel.descript}</a></dd>
+                        {/foreach}
+                    </dl>
+                    {/foreach}
+                </div>
+            </div>
+        </div>
+
+        {include file='common/link' /}
+        <div class="h40 bgf4"></div>
+        {include file='common/footer' /}
+
+        {include file='common/user' /}
+
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="/assets/css/daterangepicker.css?{:rand(10000,100000)}" rel="stylesheet">
+        <link href="/assets/css/iconfont.css?{:rand(10000,100000)}" rel="stylesheet">
+        <script type="text/javascript" src="/assets/js/moment.js"></script>
+        <script type="text/javascript" src="/assets/js/daterangepicker.js"></script>
+        <script type="text/javascript">
+         $(function () {
+            $("#tohotel").click(function () {
+                var city = $("#city").val();
+                if(city == 0) {
+                    alert('请选择城市');
+                    return false;
+                }
+
+                var range = $("#start").find("span.date").html() + '-' + $("#end").find("span.date").html();
+                var url = '/index/index/search.html?city=' + city + '&range=' + range;
+                window.location.href = url;
+            });
+        });
+
+        $('.ranges_1 ul').remove();
+        $('#daterange-btn').daterangepicker({
+                /**
+                ranges: {
+                    '全部': [moment(), moment().subtract(-1, 'days')],
+                    '今天': [moment(), moment()],
+                    '明天': [moment().subtract(-1, 'days'), moment().subtract(-1, 'days')],
+                    '未来七天': [moment(),moment().subtract(-6, 'days')],
+                    '未来30天': [moment(),moment().subtract(-29, 'days')],
+                    '未来60天': [moment(),moment().subtract(-59, 'days'), ]
+                },
+                    **/
+                startDate: moment(),
+                endDate: moment()
+            },
+            function(start, end,label) {
+                let daysOfWeek = ["周日","周一","周二","周三","周四","周五","周六"]
+                let startDate = start.format('YYYY/MM/DD');
+                $('#start span.date').html(startDate);
+                let week1 = start.weekday();
+                $('#start span.week').html(daysOfWeek[week1]);
+
+                let endDate = end.format('YYYY/MM/DD');
+                $('#end span.date').html(endDate);
+                let week2 = end.weekday();
+                $('#end span.week').html(daysOfWeek[week2]);
+
+                let diffDays = dateDiff(startDate, endDate);
+                $(".days").html(diffDays + '晚');
+            }
+        );
+        </script>
+    </body>
+
+</html>

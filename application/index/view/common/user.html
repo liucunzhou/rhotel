@@ -1,0 +1,149 @@
+{if $Think.get.poplogin == 1}
+<div class="mask" style="display: block;"></div>
+<div class="pop-user" style="display: block;">
+    <div class="pop-user-box">
+        <div class="close"></div>
+        <div class="pop-title">欢迎来到东方新丽酒店</div>
+        <div class="pop-user-body">
+            <div class="pop-login">
+                <div class="login-title">请登录您的美豪会员账号</div>
+                <div class="login-ftitle">请完成以下信息进行登录！（以下信息均为必填项）</div>
+                <form class="login-form">
+                    <div class="input-group-box">
+                        <div class="input-title">手机号</div>
+                        <div class="input-box">
+                            <input type="number" name="mobile" id="login-mobile">
+                        </div>
+                    </div>
+
+                    <div class="input-group-box">
+                        <div class="input-title">短信验证码</div>
+                        <div class="input-box flex-form-input">
+                            <input type="text" name="code" id="login-code"/>
+                            <div class="count login-count unactive">获取验证码</div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group-box submit-group">
+                        <input type="hidden" name="verify_id" id="verify_id" />
+                        <div class="submit login-submit" id="login-btn">立即登录</div>
+                    </div>
+                    <div class="form-message">
+                        <p>如果您不记得会员号码，用户名或密码，请联系客服</p>
+                        <p>客服电话：400-118-6666</p>
+                    </div>
+                </form>
+            </div>
+            <div class="pop-register">
+                <div class="register-title">加入美豪会员</div>
+                <div class="register-ftitle">请用中文或英文填写您的个人资料，即刻加入美豪会员！（以下信息均为必填项）</div>
+                <form action="">
+                    <div class="input-group-box">
+                        <div class="input-title">用户名</div>
+                        <div class="input-box">
+                            <input type="text" name="username" id="reg-username">
+                        </div>
+                    </div>
+
+                    <div class="input-group-box">
+                        <div class="input-title">手机号</div>
+                        <div class="input-box">
+                            <input type="number" name="mobile" id="reg-mobile">
+                        </div>
+                    </div>
+                    
+                    <div class="input-group-box">
+                        <div class="input-title">短信验证码</div>
+                        <div class="input-box flex-form-input">
+                            <input type="text" name="code" id="reg-code"/>
+                            <div class="count reg-count unactive">获取验证码</div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group-box submit-group">
+                        <input type="hidden" name="applyId" id="applyId">
+                        <div class="register reg-submit" id="login-btn">立即加入</div
+                    </div>
+                    <div class="form-message">
+                        <p>当您成为会员时，即表示您同意”美豪会“的条款和条件.。我们将按照我们的隐私政策来收集和使用您的个人信息。</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{else /}
+<div class="mask"></div>
+<div class="pop-user">
+    <div class="pop-user-box">
+        <div class="close"></div>
+        <div class="pop-title">欢迎来到东方新丽酒店</div>
+        <div class="pop-user-body">
+            <div class="pop-login">
+                <div class="login-title">请登录您的美豪会员账号</div>
+                <div class="login-ftitle">请完成以下信息进行登录！（以下信息均为必填项）</div>
+                <form class="login-form">
+                    <div class="input-group-box">
+                        <div class="input-title">手机号</div>
+                        <div class="input-box">
+                            <input type="number" name="mobile" id="login-mobile">
+                        </div>
+                    </div>
+
+                    <div class="input-group-box">
+                        <div class="input-title">短信验证码</div>
+                        <div class="input-box flex-form-input">
+                            <input type="text" name="code" id="login-code"/>
+                            <div class="count login-count unactive">获取验证码</div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group-box submit-group">
+                        <input type="hidden" name="verify_id" id="verify_id" />
+                        <div class="submit login-submit" id="login-btn">立即登录</div>
+                    </div>
+                    <div class="form-message">
+                        <p>如果您不记得会员号码，用户名或密码，请联系客服</p>
+                        <p>客服电话：400-118-6666</p>
+                    </div>
+                </form>
+            </div>
+            <div class="pop-register">
+                <div class="register-title">加入美豪会员</div>
+                <div class="register-ftitle">请用中文或英文填写您的个人资料，即刻加入美豪会员！（以下信息均为必填项）</div>
+                <form action="">
+                    <div class="input-group-box">
+                        <div class="input-title">用户名</div>
+                        <div class="input-box">
+                            <input type="text" name="username" id="reg-username">
+                        </div>
+                    </div>
+
+                    <div class="input-group-box">
+                        <div class="input-title">手机号</div>
+                        <div class="input-box">
+                            <input type="number" name="mobile" id="reg-mobile">
+                        </div>
+                    </div>
+                    
+                    <div class="input-group-box">
+                        <div class="input-title">短信验证码</div>
+                        <div class="input-box flex-form-input">
+                            <input type="text" name="code" id="reg-code"/>
+                            <div class="count reg-count unactive">获取验证码</div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group-box submit-group">
+                        <input type="hidden" name="applyId" id="applyId">
+                        <div class="register reg-submit" id="login-btn">立即加入</div
+                    </div>
+                    <div class="form-message">
+                        <p>当您成为会员时，即表示您同意”美豪会“的条款和条件.。我们将按照我们的隐私政策来收集和使用您的个人信息。</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/if}

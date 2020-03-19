@@ -1,0 +1,150 @@
+
+.banner {
+    height: 373px;
+    background: url('/assets/img/profile/banner.jpg');
+    background-size: cover;
+}
+
+.main {
+    width: 100%;
+    background-color:#f6f6f6;
+    padding-bottom: 60px;
+}
+
+.main .profile {
+    width: 1200px;
+    padding: 100px 200px;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+.main .profile .profile_title {
+    font-size: 24px;
+    font-weight: bolder;
+    padding: 0 0 28px;
+    border-bottom: 1px solid #000;
+    margin: 0 auto;
+    text-align: center;
+    width: 96px;
+}
+
+.main .profile .profile_info {
+    padding-top: 115px;
+}
+
+.main .profile .profile_info .welcome .text {
+    display: inline;
+    font-weight: bolder;
+}
+
+.main .profile .profile_info .member {
+    display: flex;
+    padding: 26px 0 40px;
+}
+
+.main .profile .profile_info .member .glass {
+    flex: 0 140px;
+}
+
+.main .profile .profile_info .member .mobile {
+    flex: 1;
+}
+
+.profile_point {
+    display: flex;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.profile_point .point {
+    flex: 1;
+}
+
+.profile_point .point li:first-child{
+    font-size: 32px;
+}
+.profile_point .point li:last-child{
+    color: #707070;
+}
+
+.profile_point .weixin {
+    flex: 0 400px;
+    text-align: right;
+    position: relative;
+}
+
+.profile_point .weixin .service{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.order-title {
+    font-size: 18px;
+    font-weight: bolder;
+    flex: 1;
+}
+
+.order-head {
+    display: flex;
+    padding: 40px 0 30px;
+}
+
+.order-head .search {
+    flex: 0 348px;
+    display: flex;
+    font-size: 12px;
+    flex-basis: auto;
+}
+
+.order-head .search .text {
+    padding-right: 10px;
+    line-height: 26px;
+    font-weight: bolder;
+}
+
+.order-head .search  .delimiter {
+    line-height: 26px;
+    padding: 0 8px;
+}
+
+table.orders {
+    width: 100%;
+    border: 1px solid #e1e1e1;
+}
+
+.tb-head{
+    background: #eee;
+}
+
+
+tr.even {
+    background: #000;
+    color: #fff;
+}
+
+td {
+    padding: 12px 0;
+    text-align: center;
+}
+
+td.order_no{
+    width: 110px;
+}
+
+a.bookdetail {
+    color: #f8cfa3;
+    padding: 12px;
+    display: block;
+}
+
+a.bookcancel {
+    display: block;
+    width: 68px;
+    height: 28px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 28px;
+    margin: 0 auto;
+    color: #000;
+}

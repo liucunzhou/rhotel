@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>雅致官网-房间详情</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/assets/css/common.css?{:rand(10000,100000)}" rel="stylesheet">
+        <link href="/assets/css/room.css?{:rand(1000,10000)}" rel="stylesheet">
+
+        <!-- Plugin CSS -->
+        <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://cdn.staticfile.org/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://cdn.staticfile.org/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body id="page-top">
+
+        {include file='common/nav' /}
+    
+        <div class="store-message">
+            <div class="titlepics">
+                {if isset($images[0])}
+                    <img src="{$images[0]}" alt="">
+                {else /}
+                    <img src="/assets/img/room/store.jpg" alt="">
+                {/if}
+            </div>
+            <div class="detail-mask"></div>
+            <div class="detail">
+                <div class="title">{$hotel->descript}</div>
+                <div class="address">
+                    {$hotel->address1}
+                    <span>|</span>
+                    {$hotel->phone}
+                </div>
+                <div class="remark">
+                    {$hotel->remark}
+                </div>
+            </div>
+        </div>
+        
+        <div class="main">
+            <div class="steps">
+                <div class="step-contents">
+                    <div id="choose-room" class="step-content active">
+                        <div class="tab">
+                            <div class="tab-contents">
+                                <!-- 普卡 -->
+                                <div class="tab-content active">
+                                    <div class="rooms">
+                                        {foreach item="room" name="rooms"}
+                                            {if isset($room['price'])}
+                                            <div class="room-item">
+                                                <div class="room">
+                                                    <div class="titlepic">
+                                                        {if !empty($room['titlepic'])}
+                                                            <img src="/assets/img/room/room.jpg" alt="">
+                                                        {else /}
+                                                            <img src="{$room.titlepic}" alt="">
+                                                        {/if}
+                                                    </div>
+                                                    <div class="room-details">
+                                                        <div class="room-title">{$room.title}</div>
+                                                        <div class="room-intro">建筑面积：{$room.area}</div>
+                                                        <div class="room-intro"> 楼层：{$room.floor}</div>
+                                                        <div class="room-intro">床型：{$room.bed}</div>
+                                                        <div class="room-intro">窗户：{$room.window}</div>
+                                                        <div class="room-intro">不可加床</div>
+                                                        <div class="room-config">
+                                                            <div class="room-config-btn">
+                                                                <span>房间设施详情</span>
+                                                                <img src="/assets/img/common/down.png" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="room-price">
+                                                        <div class="price-box">
+                                                            <div class="price">￥{$room.price}</div>
+                                                            <div class="tip">平均/晚</div>
+                                                        </div>
+                                                        <a class="submit" href="{:url('store/prebook', ['id'=>$room['id'], 'price'=>$room['price']])}">选择</a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="room no-padding-top room-config-box">
+                                                    <div class="titlepic"></div>
+                                                    <div class="room-details">
+                                                        <div class="room-config-detail">
+                                                            <p>*便利设施: 雨伞、书桌、多种规格电源插座、110V电压插座、空调、衣柜/衣橱、闹钟、针线包、220V电压插座、遮光窗帘、手动窗帘、床具:毯子或被子、沙发、开夜床、电子秤、房间内高速上网、客房WIFI免费</p>
+                                                            <p>*媒体科技： 国内长途电话、国际长途电话、有线频道、液晶电视机、电话、智能门锁</p>
+                                                            <p>*食品饮品： 电热水壶、咖啡壶/茶壶、瓶装水免费</p>
+                                                            <p>*浴室： 拖鞋、浴室化妆放大镜、24小时热水、洗漱用品(6样以上)免费、浴衣、独立淋浴间、吹风机、电热水器、洗浴间电话、淋浴</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="room-price"></div>
+                                                </div>
+                                            </div>
+                                            {/if}
+                                        {/foreach}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="confirm-message" class="step-content">
+                        <div class="order-success">
+                            <p>恭喜您预定成功！</p>
+                            <p>请于15:00之前到店付款入住</p>
+                        </div>
+                        <div class="redirect-message">
+                            请去<a href="{:url('user/profile')}">个人中心</a>查看订单信息
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {include file='common/link' /}
+        <div class="h40 bgf4"></div>
+        {include file='common/footer' /}
+
+        {include file='common/user' /}
+
+        <!-- jQuery -->
+        <script src=https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="https://cdn.staticfile.org/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+        <script src="/assets/libs/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+        <script src="/assets/js/frontend/common.js?{:rand(10000,100000)}"></script>
+
+        <script>
+            $(function () {
+                // 预定步骤选项卡切换
+                $(".step-items .step-item").click(function(){
+                    if(!$(this).hasClass("on")) return false;
+                    $(".step-items .step-item").removeClass("active");
+                    $(this).addClass("active")
+                    var target = $(this).attr("target");
+                    $(".step-contents .step-content").removeClass("active");
+                    $(target).addClass("active");
+                });
+                
+                $(".room-price .submit").click(function() {
+                    $(".step-items .step-item").removeClass("active");
+                    $("#tab-submit-message").addClass("on").addClass("active");
+                    $(".step-contents .step-content").removeClass("active");
+                    $("#submit-message").addClass("active");
+                    var room_id = $(this).attr("data-id");
+                    $("#room_id").val(room_id);
+
+                    var price = $(this).attr("data-price");
+                    $("#price").val(price);
+                    $("#totals_price").html(price);
+                });
+
+                $("input[name='rmNum']").change(function(){
+	                var price = $("#price").val();
+                    var amount = $(this).val();
+                    $("#totals_price").html(amount * price);
+                });
+
+                $(".submit-order").click(function() {
+                    var url = $("#prebook-form").attr("action");
+                    var data = $("#prebook-form").serialize();
+                    $.ajax({
+                        url: url,
+                        data: data,
+                        dataType: 'json',
+                        success: function (res) {
+                            if(res.resultCode != 0) {
+                                alert(res.resultMsg);
+                            } else {
+                                $(".step-items .step-item").removeClass("active");
+                                $("#tab-confirm-message").addClass("on").addClass("active");
+                                $(".step-contents .step-content").removeClass("active");
+                                $("#confirm-message").addClass("active");
+                            }
+                        }
+                    })
+                });
+
+                $(".room-config").click(function(){
+                    if(!$(this).hasClass('active')) {
+                        $(this).addClass('active');
+                        $(this).find('img').attr('src', '/assets/img/common/up.png');
+                        $(this).parents(".room-item").find(".room.no-padding-top").css('display', 'flex');
+                    } else {
+                        $(this).removeClass('active');
+                        $(this).find('img').attr('src', '/assets/img/common/down.png');
+                        $(this).parents(".room-item").find(".room.no-padding-top").hide();
+                    }
+                 
+                });
+            });
+        </script>
+    </body>
+
+</html>

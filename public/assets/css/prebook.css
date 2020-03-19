@@ -1,0 +1,385 @@
+.store-message{
+    display: flex;
+    width: 1200px;
+    background: #fff;
+    padding: 20px;
+    margin: 0 auto 38px;
+}
+
+.store-message .titlepics{
+    flex: 0 278px;
+}
+
+.store-message .titlepics img{
+    width: 100%;
+    height: 100%;
+}
+
+.store-message .detail {
+    flex: 1;
+    padding-left: 28px;
+}
+
+.store-message .detail .title{
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 14px 0;
+}
+
+.store-message .detail .address {
+    font-size: 14px;
+    padding-bottom: 6px;
+}
+
+.store-message .detail .address span{
+    padding: 0 18px;
+}
+
+
+.main {
+    width: 100%;
+    background-color:#f4f4f4;
+    padding: 38px 0;
+}
+
+.main .steps{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 120px 200px;
+    background: #fff;
+}
+
+.step-items {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.step-items .step-href,
+.step-items .step-item{
+    flex: 1;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.step-items .step-href a {
+    color: #000;
+}
+
+.step-items .step-item.active span{
+    padding: 10px;
+    border-bottom: 3px solid #000;
+}
+
+.step-content{
+    display: none;
+}
+
+.step-content.active{
+    display: block;
+}
+
+#choose-room .tab{
+    /* margin-top: 60px; */
+}
+
+#choose-room .tab .tabnav{
+    display: flex;
+    width: 100%;
+    border-bottom: 4px solid #dcdcdc;
+}
+
+#choose-room .tab .tabnav .tab-item{
+    flex: 1;
+    height: 80px;
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 14px;
+    font-weight: bolder;
+    cursor: pointer;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-right: 6px;
+}
+
+#choose-room .tab .tabnav .tab-item:last-child{
+    margin-right: 0;
+}
+
+#choose-room .tab .tabnav .tab-item .glass {
+    padding-bottom: 6px;
+}
+
+#choose-room .tab .tabnav .tab-item.active{
+    background: #dcdcdc;
+}
+
+#choose-room .tab .tabnav .tab-item {
+
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active{
+    display: block;
+}
+
+.tab-content .rooms .room-item{
+    margin-bottom: 30px;
+} 
+
+.tab-content .rooms .room {
+    display: flex;
+    padding: 22px 20px;
+    background: #fff;
+}
+
+.tab-content .rooms .room.no-padding-top{
+    padding-top: 0;
+    display: none;
+}
+
+.tab-content .rooms .room:last-child {
+    border: none;
+}
+
+.tab-content .rooms .room .titlepic{
+    flex: 0 278px;
+}
+
+.tab-content .rooms .room .titlepic img{
+    width: 100%;
+}
+
+.tab-content .rooms .room .room-details{
+    flex: 1;
+    padding-left: 40px;
+    padding-right: 66px;
+    position: relative;
+}
+
+.tab-content .rooms .room .room-details .room-title{
+    font-weight: bolder;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.tab-content .rooms .room .room-details .room-intro{
+    font-size: 12px;
+    color: #535353;
+    padding-bottom: 8px;
+}
+
+.tab-content .rooms .room .room-details .room-config{
+    position: absolute;
+    bottom: 0;
+    border: 1px solid #d7d7d7;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.tab-content .rooms .room .room-details .room-config-detail {
+    font-size: 12px;
+    line-height: 2;
+}
+
+.tab-content .rooms .room .room-price{
+    flex: 0 142px;
+    position: relative;
+}
+
+.tab-content .rooms .room .price-box {
+    padding-top: 35px;
+    text-align: right;
+}
+
+.tab-content .rooms .room .price-box .price {
+    font-size: 24px;
+    font-weight: bolder;
+    color:#b28850;
+}
+
+.tab-content .rooms .room .price-box .tip{
+    font-size:14px;
+    color:#b28850;
+}
+
+.tab-content .rooms .room .submit{
+    display: block;
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    color: #fff;
+    background: #b28850;
+    position: absolute;
+    bottom: 0;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+#submit-message form .form-group{
+    display: flex;
+    padding-top: 55px;
+}
+#submit-message form .form-group .form-item {
+    flex:1;
+}
+#submit-message form .form-group .form-item .form-input-label{
+    font-size: 14px;
+    font-weight: bolder;
+    padding-bottom: 10px;
+}
+#submit-message form .form-group .form-item input,
+#submit-message form .form-group .form-item select {
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #e5e5e5;
+    background: #F6F6F6;
+    height: 40px;
+    padding-left: 12px;
+}
+
+#submit-message form .form-group .form-item:first-child{
+    padding-right: 32px;
+}
+#submit-message form .form-group .form-item:last-child{
+    padding-left: 32px;
+}
+#submit-message form .form-group .form-item .form-input {
+    position: relative;
+}
+
+#submit-message form .form-group .form-item .form-input .sub{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    right: 48px;
+    top: 6px;
+    background: #000;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#submit-message form .form-group .form-item .form-input .add{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    right: 8px;
+    top: 6px;
+    background: #000;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#submit-message form .more-customer{
+    margin: 40px 0;
+    padding:40px 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+#submit-message form .add-customer{
+    width: 150px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    background: #000;
+    color: #fff;
+}
+
+#submit-message form .form-group.padding28{
+    padding-top: 28px;
+}
+#submit-message .book-message .book-title{
+    font-size:16px;
+    font-weight: bolder;
+    padding-bottom: 16px;
+}
+
+#submit-message .book-message ul li{
+    padding-bottom: 12px;
+}
+
+#submit-message .form-footer{
+    margin-top: 60px;
+    margin-bottom: 160px;
+    display: flex;
+}
+
+#submit-message .form-footer .total-box{
+    flex: 1;
+}
+
+#submit-message .form-footer .totals{
+    font-size: 24px;
+    font-weight: bolder;
+    padding-bottom: 22px;
+}
+#submit-message .form-footer .total,
+#submit-message .form-footer .service-total,
+#submit-message .form-footer .fee {
+    font-size:16px;
+    color: #959595;
+    padding-bottom:3px;
+}
+#submit-message .form-footer .form-footer-right{
+    flex: 0 143px;
+    position: relative;
+}
+
+#submit-message .form-footer .submit-box {
+    position: absolute;
+    bottom:0;
+    border:1px solid #a40000;
+    border-radius: 3px;
+    width:100%;
+    height: 66px;
+    cursor: pointer;
+}
+#submit-message .form-footer .submit-box .submit-order{
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    color: #fff;
+    background: #a40000;
+    font-size: 16px;
+}
+#submit-message .form-footer .submit-box .payment{
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #a40000;
+    background: #fff;
+    font-size: 14px;
+}
+#confirm-message {
+    text-align: center;
+    padding: 170px 0;
+}
+#confirm-message .order-success{
+    font-size: 24px;
+    font-weight: bold;
+}
+#confirm-message .order-success p{
+    padding-bottom: 14px;
+}
+#confirm-message .redirect-message{
+    font-size: 18px;
+}
+#confirm-message .redirect-message a{
+    color: #000;
+    font-size: 18px;
+}

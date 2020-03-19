@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>丽致官网</title>
+        <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/assets/css/common.css?{:rand(10000,1000000)}" rel="stylesheet">
+        <link href="/assets/css/profile.css?{:rand(10000,1000000)}" rel="stylesheet">
+        <!-- jQuery -->
+        <script src=https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js></script>
+        
+    </head>
+
+    <body id="page-top">
+        {include file='common/nav' /}
+        <div class="banner">
+            <div class="page_title">个人中心</div>
+        </div>
+        <div class="main">
+            <div class="profile">
+                <div class="profile_title">个人中心</div>
+                <div class="profile_info">
+                    <div class="welcome">
+                        <img src="/assets/img/user/user.png" alt="">
+                        <div class="text">您好,{$user.name}</div>
+                    </div>
+                    <div class="member">
+                        <div class="glass">会员等级 : {$user.cardLevelDescript}</div>
+                        <div class="mobile">手机号 : {$user.mobile}</div>
+                    </div>
+                </div>
+
+                <div class="profile_point">
+                    <ul class="point">
+                        <li>{$user.pointBalance}</li>
+                        <li>当前总积分</li>
+                    </ul>
+                    <div class="weixin">
+                        <div class="service">积分兑换好礼请关注 "美豪酒店" 微信公众号</div>
+                    </div>
+                </div>
+
+                <div class="orders-box">
+                    <div class="order-head">
+                        <div class="order-title">订单记录</div>
+                        <div class="search">
+                            <div class="text">预定日期</div>
+                            <div class="date">
+                                <select name="range">
+                                    <option value="1">近一个月</option>
+                                    <option value="2">近两个月</option>
+                                    <option value="3">近三个月</option>
+                                    <option value="6">近半年</option>
+                                    <option value="12">近一年</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="orders">
+                        <tr class="tb-head">
+                            <td>订单编号</td>
+                            <td>入住酒店</td>
+                            <td>房间类型</td>
+                            <td>入住时间</td>
+                            <td>离店时间</td>
+                            <td>订单类型</td>
+                            <td>订单金额</td>
+                            <td>操作</td>
+                        </tr>
+                        {foreach item="row" name="list"}
+                        <tr>
+                            <td class="order_no">{$row['crsNo']}</td>
+                            <td>{$row['hotelDescript']}</td>
+                            <td>{$row['rmtypeDescript']}</td>
+                            <td>{$row['arr']}</td>
+                            <td>{$row['dep']}</td>
+                            <td>{$row['staDescript']}</td>
+                            <td>¥{$row['rate']}</td>
+                            <td>
+                                <a href="javascript:void(0);" class="bookdetail" data-id="{$row['crsNo']}">订单详情</a>
+                                <a href="javascript:void(0);" class="bookcancel" data-id="{$row['crsNo']}">取消订单</a>
+                            </td>
+                        </tr>
+                        {/foreach}
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        {include file='common/link' /}
+        <div class="h40 bgf4"></div>
+        {include file='common/footer' /}
+
+        {include file='common/user' /}
+        <script>
+            $(function () {
+                $(".bookdetail").click(function(){
+                    
+                });
+
+                $(".bookcancel").click(function() {
+                    if(!confirm("确认取消该预定？")){
+                        return false;
+                    }
+
+                    var url = '{:url("user/cancel")}';
+                    var orderNo = $(this).attr("data-id");
+                    $.post(url, {orderNo:orderNo}, function(res) {
+                        if(res.resultCode == 0) {
+                            window.location.reload();
+                        } else {
+                            alert(res.resultMsg);
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+
+</html>

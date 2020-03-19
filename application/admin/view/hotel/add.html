@@ -1,0 +1,232 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Hotelgroupid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-hotelGroupId" class="form-control" name="row[hotelGroupId]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-code" class="form-control" name="row[code]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Sta')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sta" class="form-control" name="row[sta]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Audit')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-audit" class="form-control" name="row[audit]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Descript')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-descript" class="form-control" name="row[descript]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Descripten')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-descriptEn" class="form-control" name="row[descriptEn]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Descriptshort')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-descriptShort" class="form-control" name="row[descriptShort]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Country')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-country" class="form-control" name="row[country]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('City')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class='control-relative'><input id="c-city" class="form-control" data-toggle="city-picker" name="row[city]" type="text"></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Address1')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-address1" class="form-control" name="row[address1]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Address2')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-address2" class="form-control" name="row[address2]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Phone')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-phone" class="form-control" name="row[phone]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Fax')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-fax" class="form-control" name="row[fax]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Phonersv')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-phoneRsv" class="form-control" name="row[phoneRsv]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Website')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-website" class="form-control" name="row[website]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Email')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-email" class="form-control" name="row[email]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Remark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-remark" class="form-control " rows="5" name="row[remark]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Listorder')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-listOrder" class="form-control" name="row[listOrder]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Createuser')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-createUser" class="form-control" name="row[createUser]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Createdatetime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-createDatetime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[createDatetime]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Modifyuser')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-modifyUser" class="form-control" name="row[modifyUser]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Modifydatetime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-modifyDatetime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[modifyDatetime]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Provincecode')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-provinceCode" class="form-control" name="row[provinceCode]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Citycode')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-cityCode" class="form-control" name="row[cityCode]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Districtcode')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-districtCode" class="form-control" name="row[districtCode]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Booklistorder')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bookListOrder" class="form-control" name="row[bookListOrder]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Startlevelcode')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-startLevelCode" class="form-control" name="row[startLevelCode]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Brandcode')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-brandCode" class="form-control" name="row[brandCode]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Score')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-score" class="form-control" name="row[score]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Managetype')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-manageType" class="form-control" name="row[manageType]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Onlinecheck')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-onlineCheck" class="form-control" name="row[onlineCheck]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Clienttype')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-clientType" class="form-control" name="row[clientType]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Clientversion')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-clientVersion" class="form-control" name="row[clientVersion]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Area1')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-area1" class="form-control" name="row[area1]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Servername')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-serverName" class="form-control" name="row[serverName]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Categorycode')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-categoryCode" class="form-control" name="row[categoryCode]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Pairpic')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-pairPic" class="form-control" name="row[pairPic]" type="text">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

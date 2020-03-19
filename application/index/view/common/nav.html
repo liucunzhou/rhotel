@@ -1,0 +1,53 @@
+<div class="header">
+    <div class="logo">
+        <a href="{:url('index/index')}"><img src="/assets/img/common/logo.png" alt="美豪-丽致"></a>
+    </div>
+    <div class="nav-box">
+        <ul class="nav-top">
+            <li><a href="#">目的地</a></li>
+            <li><a href="{:url('index/index')}#story">品牌故事</a></li>
+            <li class="tongxing">
+                <a href="javascript:void(0);">
+                    <span>与您同行</span>
+                    <img class="icon-fx middle-right" src="/assets/img/common/down.png" alt="">
+                </a>
+                <dl class="bottom center">
+                    <dd><a href="{:url('index/cooperation')}">品牌合作</a></dd>
+                    <dd><a href="{:url('index/support')}">品牌支持</a></dd>
+                </dl>
+            </li>
+            <li><a href="{:url('news/index')}">品牌新闻</a></li>
+            <li><a href="{:url('index/index')}#club">美豪会</a></li>
+            <li class="language">
+                <a href="javascript:void(0);">
+                    <img class="icon-pre-language" src="/assets/img/common/language.png" alt="">
+                    <span class="language-text">语言</span>
+                    <img class="icon-fx icon-up" src="/assets/img/common/down.png" alt="">
+                </a>
+                <dl class="bottom padding-left-20">
+                    <dd><a href="">简体中文</a></dd>
+                    <dd><a href="">English</a></dd>
+                </dl>
+            </li>
+            <li>
+                {if empty($user)}
+                    <img src="/assets/img/common/avatar.png" alt="美豪酒店" class="avatar">
+                    <a href="javascript:void(0);" class="show-pop-user">登录</a>
+                    <span class="delimiter">或</span>
+                    <a href="javascript:void(0);" class="show-pop-user">注册美豪会员</a>
+                {else /}
+                    <img src="/assets/img/common/avatar.png" alt="用户头像">
+                    <a class="name" href="{:url('user/profile')}">您好,{$user.name}</a>
+                    <a class="logout" href="{:url('user/logout')}">退出</a>
+                {/if}
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="fullScreen">
+    <div class="close"></div>
+    <div class="full-screen-img">
+        <img src="/assets/img/support/base-support.jpg" alt="">
+    </div>
+</div>

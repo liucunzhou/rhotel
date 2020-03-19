@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>雅致官网-房间详情</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/assets/css/common.css?{:rand(10000,100000)}" rel="stylesheet">
+        <link href="/assets/css/prebook.css?{:rand(1000,10000)}" rel="stylesheet">
+
+        <!-- Plugin CSS -->
+        <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://cdn.staticfile.org/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://cdn.staticfile.org/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body id="page-top">
+
+        {include file='common/nav' /}
+        
+        <div class="main">
+            <div class="store-message">
+                <div class="titlepics">
+                    {if isset($room['titlepic'])}
+                        <img src="{$room['titlepic']}" alt="">
+                    {else /}
+                        <img src="/assets/img/room/room.jpg" alt="">
+                    {/if}
+                </div>
+                <div class="detail">
+                    <div class="title">{$hotel->descript}</div>
+                    <div class="address">{$hotel->address1}</div>
+                    <div class="address">{$hotel->phone}</div>
+                </div>
+            </div>
+            
+            <div class="steps">
+                <div class="step-items">
+                    <div class="step-href" id="tab-choose-room" target="#choose-room">
+                        <a href="{:url('store/room', ['id'=>$hotel['id']])}">选择房型</a>
+                    </div>
+                    <div class="step-item on active" id="tab-submit-message" target="#submit-message">
+                        <span>输入信息</span>
+                    </div>
+                    <div class="step-item" id="tab-confirm-message" target="#confirm-message">
+                        <span>查看确认</span>
+                    </div>
+                </div>
+                <div class="step-contents">
+                    <div id="submit-message" class="step-content active">
+                        <form id="prebook-form" action="{:url('user/prebook')}" method="post">
+                            <div class="form-group">
+                                <div class="form-item">
+                                    <div class="form-input-label">入住时间</div>
+                                    <div class="form-input">
+                                        <input type="datetime" name="arr" class="datetime">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="form-input-label">离店时间</div>
+                                    <div class="form-input">
+                                        <input type="datetime" name="dep" class="datetime">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-item">
+                                    <div class="form-input-label">房间数量</div>
+                                    <div class="form-input">
+                                        <input type="number" name="rmNum" value="1">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="form-input-label">预定客人</div>
+                                    <div class="form-input">
+                                        <input type="text" name="rsvMan">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-item">
+                                    <div class="form-input-label">手机号码</div>
+                                    <div class="form-input">
+                                        <input type="number" name="mobile">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="form-input-label">备注</div>
+                                    <div class="form-input">
+                                        <input type="text" name="remark">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="book-message">
+                                <div class="book-title">*预定须知</div>
+                                <ul>
+                                    <li>入住和离店	入住时间：13:00以后      离店时间：13:00以前</li>
+                                    <li>儿童政策</li>
+                                    <li>•酒店允许携带儿童入住</li>
+                                    <li>•儿童/加床政策请详询酒店。</li>
+                                    <li>早餐信息</li>
+                                    <li>形式：自助餐</li>
+                                    <li>价格：官网预定客人免费享用双人早餐</li>
+                                    <li>宠物	不可携带宠物。</li>
+                                </ul>
+                            </div>
+
+                            <div class="form-footer">
+                                <div class="total-box">
+                                    <div class="totals">
+                                        总计      ￥<span id="totals_price">{$request.price}</span>
+                                    </div>
+                                    <!--
+                                    <div class="total">
+                                        小计 ￥1,140.00
+                                    </div>
+                                    <div class="service-total">
+                                        服务费和税费 ￥171.00
+                                    </div>
+                                    <div class="fee">
+                                        税费 ￥171.00
+                                    </div>
+                                    -->
+                                </div>
+                                <div class="form-footer-right">
+                                    <div class="submit-box">
+                                        <input type="hidden" id="room_id" name="room_id" value="{$request.id}"/>
+                                        <input type="hidden" id="price" name="price" value="{$request.price}"/>
+                                        <div class="submit-order">
+                                            提交订单
+                                        </div>
+                                        <div class="payment">
+                                            到店付款
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="confirm-message" class="step-content">
+                        <div class="order-success">
+                            <p>恭喜您预定成功！</p>
+                            <p>请于15:00之前到店付款入住</p>
+                        </div>
+                        <div class="redirect-message">
+                            请去<a href="{:url('user/profile')}">个人中心</a>查看订单信息
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {include file='common/link' /}
+        <div class="h40 bgf4"></div>
+        {include file='common/footer' /}
+
+        {include file='common/user' /}
+
+        <!-- jQuery -->
+        <script src=https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="https://cdn.staticfile.org/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+        <script src="/assets/libs/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+        <script src="/assets/js/frontend/common.js?{:rand(10000,100000)}"></script>
+
+        <script>
+            $(function () {
+                // 预定步骤选项卡切换
+                $(".step-items .step-item").click(function(){
+                    if(!$(this).hasClass("on")) return false;
+                    $(".step-items .step-item").removeClass("active");
+                    $(this).addClass("active")
+                    var target = $(this).attr("target");
+                    $(".step-contents .step-content").removeClass("active");
+                    $(target).addClass("active");
+                });
+                
+                $(".room-price .submit").click(function() {
+                    $(".step-items .step-item").removeClass("active");
+                    $("#tab-submit-message").addClass("on").addClass("active");
+                    $(".step-contents .step-content").removeClass("active");
+                    $("#submit-message").addClass("active");
+                    var room_id = $(this).attr("data-id");
+                    $("#room_id").val(room_id);
+
+                    var price = $(this).attr("data-price");
+                    $("#price").val(price);
+                    $("#totals_price").html(price);
+                });
+
+                $("input[name='rmNum']").change(function(){
+	                var price = $("#price").val();
+                    var amount = $(this).val();
+                    $("#totals_price").html(amount * price);
+                });
+
+                $(".submit-order").click(function() {
+                    var url = $("#prebook-form").attr("action");
+                    var data = $("#prebook-form").serialize();
+                    $.ajax({
+                        url: url,
+                        data: data,
+                        dataType: 'json',
+                        success: function (res) {
+                            if(res.resultCode != 0) {
+                                alert(res.resultMsg);
+                            } else {
+                                $(".step-items .step-item").removeClass("active");
+                                $("#tab-confirm-message").addClass("on").addClass("active");
+                                $(".step-contents .step-content").removeClass("active");
+                                $("#confirm-message").addClass("active");
+                            }
+                        }
+                    })
+                });
+
+                $(".room-config").click(function(){
+                    if(!$(this).hasClass('active')) {
+                        $(this).addClass('active');
+                        $(this).find('img').attr('src', '/assets/img/common/up.png');
+                        $(this).parents(".room-item").find(".room.no-padding-top").css('display', 'flex');
+                    } else {
+                        $(this).removeClass('active');
+                        $(this).find('img').attr('src', '/assets/img/common/down.png');
+                        $(this).parents(".room-item").find(".room.no-padding-top").hide();
+                    }
+                 
+                });
+            });
+        </script>
+    </body>
+
+</html>

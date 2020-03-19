@@ -1,0 +1,344 @@
+.target-block {
+    width: 100%;
+    height: 816px;
+    background: url('/assets/img/common/banner.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+.target-form {
+    display: flex;
+    background: #fff;
+    position: absolute;
+    width: 1200px;
+    left: 50%;
+    bottom: 100px;
+    transform: translate(-50%);
+    padding: 12px 60px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.target-form .select-box {
+    position: relative;
+    flex: 0 196px;
+    margin-right: 96px;
+}
+
+.target-form select {
+    width: 100%;
+    height: 34px;
+    appearance: none;
+    -webkit-appearance: none;
+    font-size: 14px;
+    font-weight: bolder;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    border-bottom: 1px solid #dcdcdc;
+    border-radius: 0;
+}
+
+.target-form .select-box::after {
+    content: " ";
+    width: 14px;
+    height: 8px;
+    background: url(/assets/img/common/down.png) no-repeat center;
+    position: absolute;
+    right: 0;
+    top: 45%;
+    pointer-events: none;
+}
+
+.target-form .arr_dep {
+    display: flex;
+    flex: 1;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.target-form .date_box {
+    flex: 0 170px;
+    height: 34px;
+    font-size: 14px;
+    font-weight: bolder;
+    text-align: left;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.target-form .delimiter {
+    padding: 0 16px;
+}
+
+.target-form .days {
+    padding-left: 22px;
+}
+
+.target-search {
+    flex: 0 252px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #59493f;
+    color: #fff;
+    text-align: center;
+}
+
+.home-banners {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 120px;
+}
+
+.home-banners .carousel-control {
+    position: absolute;
+    top: unset;
+    left: unset;
+    right: 0;
+    bottom: 0;
+    width: 57px;
+    height: 56px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.home-banners .carousel-control.left {
+    right: 60px;
+    bottom: 0;
+    background-image: url('/assets/img/common/left.png');
+    background-repeat: no-repeat;
+    filter: none;
+}
+
+.home-banners .carousel-control.right {
+    right: 0!important;
+    bottom: 0!important;
+    background-image: url('/assets/img/common/right.png');
+    background-repeat: no-repeat;
+    filter: none;
+}
+
+.home-banners .carousel-inner .item .carousel-caption {
+    position: absolute;
+    width: 538px;
+    top: 50%;
+    right: 0;
+    left: unset;
+    bottom: unset;
+    transform: translateY(-50%);
+    padding: 50px 40px;
+    color: #333;
+    background-color: #fff;
+    text-shadow: none;
+    text-align: left;
+}
+
+.home-banners .carousel-inner .item .carousel-caption .carousel-caption-title {
+    font-size: 36px;
+    font-style: italic;
+}
+
+.carousel-caption-title-animation {
+    animation-duration: 5s;
+    -webkit-animation-duration: 5s;
+    -o-animation-duration: 5s;
+    -ms-animation-duration: 5s;
+    -moz-animation-duration: 5s;
+    -webkit-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -webkit-animation-name: home-baner-title;
+    animation-name: home-baner-title;
+    -o-animation-name: home-baner-title;
+    -ms-animation-name: home-baner-title;
+    -moz-animation-name: home-baner-title;
+}
+
+.home-banners .carousel-inner .item .carousel-caption .carousel-caption-content {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.carousel-caption-content-animation {
+    animation-duration: 5s;
+    -webkit-animation-duration: 5s;
+    -o-animation-duration: 5s;
+    -ms-animation-duration: 5s;
+    -moz-animation-duration: 5s;
+    -webkit-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -webkit-animation-name: bannerH2;
+    animation-name: bannerH2;
+    -o-animation-name: bannerH2;
+    -ms-animation-name: bannerH2;
+    -moz-animation-name: bannerH2;
+}
+
+.story-block {
+    padding-top: 176px;
+}
+
+.story-titlepic {
+    font-size: 0;
+}
+
+.story-titlepic img {
+    width: 100%;
+    height: 100%;
+}
+
+.story-panel {
+    background: #fff;
+    padding: 38px 78px;
+}
+
+.story-panel .story-title {
+    font-size: 24px;
+    padding: 0 8px;
+    margin-bottom: 24px;
+}
+
+.story-panel .story-content {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.hotel-block {
+    width: 1200px;
+    margin: 120px auto 0;
+}
+
+.hotel-block .hotel-intro {
+    padding: 40px 0;
+}
+
+.hotel-block .hotel-intro p {
+    padding-bottom: 8px;
+}
+
+.swiper-button-prev {
+    background-image: url('/assets/img/common/left.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.swiper-button-prev:after {
+    content: ' '!important;
+}
+
+.swiper-button-next:after {
+    content: ' '!important;
+}
+
+.swiper-button-next {
+    background-image: url('/assets/img/common/right.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.club-block {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 120px 0;
+}
+
+.club-block .club {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #fff;
+    padding: 40px;
+}
+
+.club-block .club .title {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bolder;
+    font-style: italic;
+    color: #333;
+    font-family: 'MicrosoftYaHei';
+}
+
+.club-block .club .ftitle {
+    margin: 16px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.club-block .club .content {
+    margin-bottom: 50px;
+}
+
+.club-block .club .content p {
+    font-size: 14px;
+    color: #333;
+    padding-bottom: 8px;
+}
+
+.club-block .link-to-group {
+    position: absolute;
+    right: 0;
+    bottom: 120px;
+    width: 225px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    border: 1xp solid #fff;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+.club-block .club a {
+    color: #333;
+}
+
+@keyframes home-baner-title {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+        -moz-transform: translateY(50px);
+        -o-transform: translateY(50px);
+        -ms-transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -moz-transform: translateY(0);
+        -o-transform: translateY(0);
+        -ms-transform: translateY(0);
+    }
+}
+
+@keyframes bannerH2 {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+        -moz-transform: translateY(50px);
+        -o-transform: translateY(50px);
+        -ms-transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -moz-transform: translateY(0);
+        -o-transform: translateY(0);
+        -ms-transform: translateY(0);
+    }
+}

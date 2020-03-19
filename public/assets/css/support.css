@@ -1,0 +1,133 @@
+.banners{
+    position: relative;
+    width: 100%;
+}
+
+.banners .banner-title{
+    position: absolute;
+    width: 1200px;
+    padding: 36px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    font-size: 48px;
+    font-weight: bold;
+    font-style: italic;
+    color: #fff;
+}
+
+.banners img {
+    width: 100%;
+}
+
+
+.base-support{
+    width: 1200px;
+    margin: 120px auto 0;
+}
+
+.base-support img{
+    width: 100%;
+}
+
+.big-data-support{
+    display: flex;
+    width: 1200px;
+    margin: 100px auto;
+}
+
+.big-data-support img{
+    flex: 1;
+}
+
+.big-data-support .big-data-support-right{
+    flex: 1;
+    display: flex;
+    background-color: #cdc4b5;
+}
+
+.big-data-support .big-data-support-right .half {
+    flex: 1;
+    text-align: center;
+}
+
+.pms-support{
+    display: flex;
+    width: 1200px;
+    margin: 100px auto;
+}
+
+.pms-support img{
+    flex: 1;
+}
+
+.operation-support{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.operation-support  .carousel-control.left {
+    width: 34px;
+    height: 34px;
+    left: 18px;
+    right: unset;
+    top: 50%;
+    bottom: 0;
+    transform: translateY(-50%);
+    background-image: url('/assets/img/support/operation-carousel-left.png');
+    background-repeat: no-repeat;
+    filter: none;
+}
+
+.operation-support  .carousel-control.right {
+    width: 34px;
+    height: 34px;
+    left: unset;
+    right: 18px;
+    top: 50%;
+    bottom: 0;
+    transform: translateY(-50%);
+    background-image: url('/assets/img/support/operation-carousel-right.png');
+    background-repeat: no-repeat;
+    filter: none;
+}
+
+@-webkit-keyframes fadeInMine {
+    30% {
+        opacity: .3;
+      }
+    
+      60% {
+          opacity: .6;
+      }
+  
+      100% {
+        opacity: 1;
+      }
+  }
+  
+  @keyframes fadeInMine {
+    30% {
+      opacity: .3;
+    }
+  
+    60% {
+        opacity: .6;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .fadeInMine {
+    -webkit-animation-name: fadeInMine;
+    animation-name: fadeInMine;
+  }
+
+.animated3s{
+    -webkit-animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-duration: 3s;
+}

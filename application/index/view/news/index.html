@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>品牌支持</title>
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <link href="/assets/css/common.css?{:rand(10000,1000000)}" rel="stylesheet">
+        <link href="/assets/css/support.css?{:rand(10000,1000000)}" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/animations.css">
+        <link rel="stylesheet" href="/assets/swiper/package/css/swiper.min.css">
+        <!-- jQuery -->
+        <script src=https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js></script>
+        <script src="/assets/js/common.js?{:rand(10000,100000)}"></script>
+        <style>
+            .daterangepicker {
+                top: 768px!important;
+                display: none;
+            }
+            .btn-default:hover,.btn-default:active,.btn-default:focus{
+                background-color: inherit;
+            }
+
+            .swiper-container {
+                width: 100%;
+                height: 100%;
+            }
+            .swiper-slide img{
+                width: 100%;
+                padding: 0 5px;
+            }
+
+            .bg-banner {
+                height: 578px;
+                background: #59493f;
+                overflow: hidden;
+            }
+
+            .bg-news{
+                background: #eee;
+                padding: 44px 0 100px;
+            }
+
+            .news-list{
+                display: flex;
+                width: 1200px;
+                margin: 0 auto;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .news-list .news
+            {
+                margin-bottom: 37px;
+            }
+
+            .news-list .news .title{
+                height: 98px;
+                line-height: 98px;
+                background: #fff;
+                color: #000;
+                text-align: center;
+                font-size: 16px;
+                font-weight: bolder;
+            }
+
+        </style>
+    </head>
+
+    <body id="page-top">
+        {include file='common/nav' /}
+        <div class="bg-banner">
+            <div class="operation-support">
+                <div id="operation-carousel" class="operation-carousel carousel slide" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                      <div class="item active">
+                        <img src="/assets/img/news/banner.png" alt="" class="showFullScreen">
+                      </div>>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#operation-carousel" role="button" data-slide="prev">
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#operation-carousel" role="button" data-slide="next">
+                      <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-news">
+            <div class="news-list">
+                <div class="news">
+                    <img src="/assets/img/news/titlepic1.jpg" alt="">
+                    <div class="title">
+                        3招教你拥有春意盎然生机勃勃的ins风客厅
+                    </div>
+                </div>
+                <div class="news">
+                    <img src="/assets/img/news/titlepic2.jpg" alt="">
+                    <div class="title">
+                        3招教你拥有春意盎然生机勃勃的ins风客厅
+                    </div>
+                </div>
+                <div class="news">
+                    <img src="/assets/img/news/titlepic3.jpg" alt="">
+                    <div class="title">
+                        3招教你拥有春意盎然生机勃勃的ins风客厅
+                    </div>
+                </div>
+
+                <div class="news">
+                    <img src="/assets/img/news/titlepic1.jpg" alt="">
+                    <div class="title">
+                        3招教你拥有春意盎然生机勃勃的ins风客厅
+                    </div>
+                </div>
+
+                <div class="news">
+                    <img src="/assets/img/news/titlepic2.jpg" alt="">
+                    <div class="title">
+                        3招教你拥有春意盎然生机勃勃的ins风客厅
+                    </div>
+                </div>
+
+                <div class="news">
+                    <img src="/assets/img/news/titlepic3.jpg" alt="">
+                    <div class="title">
+                        3招教你拥有春意盎然生机勃勃的ins风客厅
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {include file='common/footer' /}
+
+        {include file='common/user' /}
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="/assets/css/daterangepicker.css?{:rand(10000,100000)}" rel="stylesheet">
+        <link href="/assets/css/iconfont.css?{:rand(10000,100000)}" rel="stylesheet">
+        <script type="text/javascript" src="/assets/js/moment.js"></script>
+        <script type="text/javascript" src="/assets/js/daterangepicker.js"></script>
+        <script src="/assets/swiper/package/js/swiper.min.js"></script>
+        <script type="text/javascript">
+         $(function () {
+            $(document).scroll(function(){
+                var offset = $(this).scrollTop();
+                console.log(offset);
+                if(offset > 208) {
+                    $(".base-support").addClass("fadeInMine").addClass("animated3s");
+                } else {
+                    $(".base-support").removeClass("fadeInMine").removeClass("animated3s");
+                }
+
+                if(offset > 630) {
+                    $(".big-data-support-right .half-left").addClass("fadeInLeft").addClass("animated");
+                    $(".big-data-support-right .half-right").addClass("fadeInRight").addClass("animated");
+                } else {
+                    $(".big-data-support-right .half-left").removeClass("fadeInLeft").removeClass("animated");
+                    $(".big-data-support-right .half-right").removeClass("fadeInRight").removeClass("animated");
+                }
+
+                if(offset > 1800) {
+                    $(".pms-support-left").addClass("fadeInLeft").addClass("animated");
+                    $(".pms-support-right").addClass("fadeInRight").addClass("animated");
+                } else {
+                    $(".pms-support-left").removeClass("fadeInLeft").removeClass("animated");
+                    $(".pms-support-right").removeClass("fadeInRight").removeClass("animated");
+                }
+            });
+            $("#tohotel").click(function () {
+                var city = $("#city").val();
+                if(city == 0) {
+                    alert('请选择城市');
+                    return false;
+                }
+
+                var range = $("#start").find("span.date").html() + '-' + $("#end").find("span.date").html();
+                var url = '/index/index/search.html?city=' + city + '&range=' + range;
+                window.location.href = url;
+            });
+
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 4,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            });
+        });
+
+        $('.ranges_1 ul').remove();
+        $('#daterange-btn').daterangepicker({
+                /**
+                ranges: {
+                    '全部': [moment(), moment().subtract(-1, 'days')],
+                    '今天': [moment(), moment()],
+                    '明天': [moment().subtract(-1, 'days'), moment().subtract(-1, 'days')],
+                    '未来七天': [moment(),moment().subtract(-6, 'days')],
+                    '未来30天': [moment(),moment().subtract(-29, 'days')],
+                    '未来60天': [moment(),moment().subtract(-59, 'days'), ]
+                },
+                    **/
+                startDate: moment(),
+                endDate: moment()
+            },
+            function(start, end,label) {
+                let daysOfWeek = ["周日","周一","周二","周三","周四","周五","周六"]
+                let startDate = start.format('YYYY/MM/DD');
+                $('#start span.date').html(startDate);
+                let week1 = start.weekday();
+                $('#start span.week').html(daysOfWeek[week1]);
+
+                let endDate = end.format('YYYY/MM/DD');
+                $('#end span.date').html(endDate);
+                let week2 = end.weekday();
+                $('#end span.week').html(daysOfWeek[week2]);
+
+                let diffDays = dateDiff(startDate, endDate);
+                $(".days").html(diffDays + '晚');
+            }
+        );
+        </script>
+    </body>
+
+</html>
