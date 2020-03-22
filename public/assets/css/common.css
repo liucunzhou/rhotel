@@ -47,7 +47,6 @@ a,a:hover{
     line-height: 55px;
 }
 .logo img{
-    width: 100%;
     vertical-align: middle;
 }
 div.nav-box{
@@ -104,12 +103,10 @@ ul.nav-top li dl.bottom dd{
     height: 50px;
     line-height: 50px;
     background-color: #fff;
-    border-bottom: 1px solid #59493f;
 }
 
 ul.nav-top li dl.bottom dd a {
     display: block;
-    color: #59493f;
 }
 
 ul.nav-top li dl.bottom dd:last-child{
@@ -117,7 +114,7 @@ ul.nav-top li dl.bottom dd:last-child{
 }
 
 ul.nav-top li dl.bottom dd:hover{
-    background-color: #59493f;
+    color: #e27324;
 }
 
 ul.nav-top li dl.bottom dd:hover a{
@@ -142,81 +139,46 @@ ul.nav-top li .delimiter{
 
 
 .footer-box{
-    background-color: #e2dcd4;
-    border-top: 5px solid #59493f;
+    background-color: #1b1b1b;
+    padding: 60px 0 40px;
 }
 
 .footer{
-    display: flex;
     width: 1200px;
     margin: 0 auto;
-    padding-top: 90px;
-    padding-bottom: 120px;
 }
 
-.footer .footer-left .links{
-    position: relative;
-    border: 2px solid #59493f;
-    padding: 25px 48px;
-}
-
-.footer .footer-left .links .group-link {
-    position: absolute;
-    left: 50%;
-    top: -12px;
-    transform: translateX(-50%);
-    padding: 0 8px;
-    background-color: #e2dcd4;
-}
-
-.footer .footer-left .links .group-link a{
-    color: #59493f;
-    font-size: 16px;
-    font-weight: bolder;
-}
-
-.footer .footer-left .links .link-row{
+.companies {
     display: flex;
+    padding: 53px 0 50px;
+    border-top: 1px solid #494949;
+    border-bottom: 1px solid #494949;
 }
 
-.footer .footer-left .links .link-row a{
-    flex: 1;
-    padding-top: 16px;
+.companies .group{
+    padding-right: 60px;
+    margin-right: 60px;
+    border-right: 1px solid #fff;
 }
 
-.footer .footer-left .links .link-row a img {
-    width: 100px;
+.footer-bottom {
+    padding-top: 38px;
+    color: #fff;
 }
 
-.footer .footer-right{
-    padding-left: 180px;
-    flex: 1;
+.footer-bottom a {
+    color: #fff;
 }
 
-.footer .footer-right ul li {
-    font-size: 12px;
-    color: #362e2b;
-    padding:18px 0;
-    border-bottom: 1px solid #59493f;
+.footer-bottom ul{
+    width: 910px;
+    margin: 0 auto;
 }
 
-.footer .footer-right ul li:first-child{
-    padding-top: 0;
+.footer-bottom ul li {
+    display: inline-block;
+    padding: 0 17px;
 }
-
-.footer .footer-right ul li.contacts {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.footer .footer-right ul li.contacts dl {
-    font-size: 13px;
-}
-.footer .footer-right ul li.contacts dl dt{
-    padding-bottom: 14px;
-}
-
 
 .mask{
     display: none;
