@@ -16,6 +16,10 @@
         <script src=https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js></script>
         <script src="/assets/js/common.js?{:rand(10000,100000)}"></script>
         <style>
+            body{
+                position: relative;
+            }
+
             .daterangepicker {
                 top: 768px!important;
                 display: none;
@@ -57,6 +61,10 @@
                 margin-bottom: 37px;
             }
 
+            .news-list .news img.titlepic{
+                width: 374px;
+            }
+
             .news-list .news .title{
                 height: 98px;
                 line-height: 98px;
@@ -65,8 +73,80 @@
                 text-align: center;
                 font-size: 16px;
                 font-weight: bolder;
+                max-width: 374px;
+                padding:0 12px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: relative;
             }
 
+
+            .mask-news{
+                display: none;
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, .6);
+                z-index: 1000;
+            }
+
+            .news-pop {
+                position: absolute;
+                width: 1200px;
+                height: 80%;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                flex-direction: column;
+            }
+            .news-pop .news-header {
+                position: sticky;
+                left: 0;
+                top: 0;
+                width: 100%;
+                padding: 40px 0;
+                background: #fff;
+                text-align: center;
+            }
+            .news-pop .news-header .news-title{
+                font-size: 24px;
+            }
+            .news-pop .news-header .news-datetime{
+                font-size: 16px;
+                color: #a0a0a0;
+            }
+            .news-pop .news-header .close-news{
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 30px;
+                height: 30px;
+                z-index: 1000;
+                background: url("/assets/img/news/news-close.png") no-repeat;
+            }
+            .news-pop .news-body{
+                background: #cec4b6;
+                padding: 12px 40px;
+                overflow-y: auto;
+            }
+            .news-pop .news-body .content{
+                width: 600px;
+                margin: 0 auto;
+            }
+            .news-pop .news-body p{
+                font-size: 14px;
+                line-height: 2;
+                margin-bottom: 8px;
+            }
+            .news-pop .news-body img{
+                width: 100%;
+                text-align: center;
+
+            }
         </style>
     </head>
 
@@ -95,47 +175,28 @@
 
         <div class="bg-news">
             <div class="news-list">
-                <div class="news">
-                    <img src="/assets/img/news/titlepic1.jpg" alt="">
-                    <div class="title">
-                        3招教你拥有春意盎然生机勃勃的ins风客厅
+                {foreach name="list" item="val"}
+                    <div class="news">
+                        <img class="titlepic" src="{$val['titlepic']|default='/assets/img/news/titlepic1.jpg'}" alt="">
+                        <div class="title">
+                            {$val['title']}
+                        </div>
+                        <div class="news-pop hide">
+                            <div class="news-header">
+                                <div class="news-title">{$val['title']}</div>
+                                <div class="news-datetime">{:date('Y-m-d H:i:s', $val['news_time'])}</div>
+                                <div class="close-news"></div>
+                            </div>
+                            <div class="news-body">
+                                <div class="content">{$val['content']}</div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="news">
-                    <img src="/assets/img/news/titlepic2.jpg" alt="">
-                    <div class="title">
-                        3招教你拥有春意盎然生机勃勃的ins风客厅
-                    </div>
-                </div>
-                <div class="news">
-                    <img src="/assets/img/news/titlepic3.jpg" alt="">
-                    <div class="title">
-                        3招教你拥有春意盎然生机勃勃的ins风客厅
-                    </div>
-                </div>
-
-                <div class="news">
-                    <img src="/assets/img/news/titlepic1.jpg" alt="">
-                    <div class="title">
-                        3招教你拥有春意盎然生机勃勃的ins风客厅
-                    </div>
-                </div>
-
-                <div class="news">
-                    <img src="/assets/img/news/titlepic2.jpg" alt="">
-                    <div class="title">
-                        3招教你拥有春意盎然生机勃勃的ins风客厅
-                    </div>
-                </div>
-
-                <div class="news">
-                    <img src="/assets/img/news/titlepic3.jpg" alt="">
-                    <div class="title">
-                        3招教你拥有春意盎然生机勃勃的ins风客厅
-                    </div>
-                </div>
+                {/foreach}
             </div>
         </div>
+
+        <div class="mask-news"></div>
 
 
         {include file='common/footer' /}
@@ -150,6 +211,11 @@
         <script src="/assets/swiper/package/js/swiper.min.js"></script>
         <script type="text/javascript">
          $(function () {
+            $(".news").click(function(){
+                var newsPop = $(this).find(".news-pop").clone();
+                $(".mask-news").html(newsPop.removeClass("hide")).show();
+            })
+
             $(document).scroll(function(){
                 var offset = $(this).scrollTop();
                 console.log(offset);
@@ -194,39 +260,11 @@
                     prevEl: '.swiper-button-prev',
                 }
             });
+
+            $(document).on("click", ".news-pop .news-header .close-news", function () {
+                $(".mask-news").hide();
+            })
         });
-
-        $('.ranges_1 ul').remove();
-        $('#daterange-btn').daterangepicker({
-                /**
-                ranges: {
-                    '全部': [moment(), moment().subtract(-1, 'days')],
-                    '今天': [moment(), moment()],
-                    '明天': [moment().subtract(-1, 'days'), moment().subtract(-1, 'days')],
-                    '未来七天': [moment(),moment().subtract(-6, 'days')],
-                    '未来30天': [moment(),moment().subtract(-29, 'days')],
-                    '未来60天': [moment(),moment().subtract(-59, 'days'), ]
-                },
-                    **/
-                startDate: moment(),
-                endDate: moment()
-            },
-            function(start, end,label) {
-                let daysOfWeek = ["周日","周一","周二","周三","周四","周五","周六"]
-                let startDate = start.format('YYYY/MM/DD');
-                $('#start span.date').html(startDate);
-                let week1 = start.weekday();
-                $('#start span.week').html(daysOfWeek[week1]);
-
-                let endDate = end.format('YYYY/MM/DD');
-                $('#end span.date').html(endDate);
-                let week2 = end.weekday();
-                $('#end span.week').html(daysOfWeek[week2]);
-
-                let diffDays = dateDiff(startDate, endDate);
-                $(".days").html(diffDays + '晚');
-            }
-        );
         </script>
     </body>
 

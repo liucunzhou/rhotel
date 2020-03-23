@@ -199,9 +199,10 @@ ul.nav-top li .delimiter{
     height: 670px;
     top: 0;
     left: 0;
-    background: #cec4b6;
+    /* background: #fff; */
     z-index: 101;
     color: #59493f;
+    padding: 16px 0;
 }
 
 .pop-user .pop-user-box{
@@ -211,11 +212,13 @@ ul.nav-top li .delimiter{
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 102;
+    background: #fff;
+    padding: 16px 0;
 }
 
 .pop-user .close{
     position: absolute;
-    top: -36px;
+    top: 20px;
     right: 40px;
     width: 33px;
     height: 33px;
@@ -306,21 +309,21 @@ ul.nav-top li .delimiter{
     text-align: center;
     line-height: 36px;
     margin-left: 12px;
-    box-sizing: border-box;
     border: 1px solid #59493f;
     border-radius: 5px;
     cursor: pointer;
     font-size: 12px;
     font-weight: normal;
+    box-sizing: content-box;
 }
 
 .count.unactive {
-    background: #59493f;
-    color: #fff;
+    border: 1px solid #59493f;
+    color: #59493f;
 }
 
 .count.active {
-    background: #fff;
+    border: 1px solid #59493f;
     color: #59493f;
 }
 
@@ -335,7 +338,7 @@ ul.nav-top li .delimiter{
 }
 
 .submit-group .submit{
-    background: #a40000;;
+    background: #e27324;
     height: 40px;
     line-height: 40px;
     text-align: center;
@@ -345,13 +348,13 @@ ul.nav-top li .delimiter{
 }
 
 .submit-group .register{
-    background: #59493f;
+    border: 1px solid #59493f;
     height: 40px;
     line-height: 40px;
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
-    color: #fff;
+    color: #000;
 }
 
 .overflow{
@@ -390,7 +393,7 @@ dl.hotel-address-item {
 }
 
 dl.hotel-address-item dt{
-    font-size: 20pxt;
+    font-size: 20px;
     font-weight: bolder;
 }
 

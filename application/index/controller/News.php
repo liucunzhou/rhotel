@@ -15,6 +15,10 @@ class News extends Controller
 
     public function index()
     {
+        $news = new \app\admin\model\News();
+        $list = $news->order('sort desc')->paginate(15);
+        $this->assign('list', $list);
+
         return $this->view->fetch();
     }
 }
