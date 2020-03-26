@@ -11,6 +11,11 @@
 // +----------------------------------------------------------------------
 // [ 应用入口文件 ]
 // 定义应用目录
+
+ini_set("display_errors", "On");
+
+error_reporting(E_ALL | E_STRICT);
+
 define('APP_PATH', __DIR__ . '/../application/');
 
 // 判断是否安装FastAdmin
