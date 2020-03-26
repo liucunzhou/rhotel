@@ -61,9 +61,20 @@
                 margin-bottom: 37px;
             }
 
-            .news-list .news img.titlepic{
-                width: 374px;
+            .news-list .news:last-child{
+                flex: auto;
+                margin-left: 39px;
             }
+
+            .news-list .news .titlepic{
+                width: 374px;
+                height: 281px;
+                overflow: hidden;
+            }
+            .news-list .news .titlepic img{
+                width: 100%;
+            }
+
 
             .news-list .news .title{
                 height: 98px;
@@ -180,7 +191,7 @@
             <div class="news-list">
                 {foreach name="list" item="val"}
                     <div class="news">
-                        <img class="titlepic" src="{$val['titlepic']|default='/assets/img/news/titlepic1.jpg'}" alt="">
+                        <div class="titlepic"><img src="{$val['titlepic']|default='/assets/img/news/titlepic1.jpg'}" alt=""></div>
                         <div class="title">
                             {$val['title']}
                         </div>
